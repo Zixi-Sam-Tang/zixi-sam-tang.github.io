@@ -1,1 +1,16 @@
+body {
+  background-color: #202020;
+  margin: auto;
+}
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.highlight {
+  color: #03f8fc;
+}
+
+.heading-2 {
+  font-size: 1.5rem;
+}

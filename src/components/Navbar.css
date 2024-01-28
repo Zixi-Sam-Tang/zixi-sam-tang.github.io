@@ -1,11 +1,18 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.4rem;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0B2447;
-  color: #ffffff;
+  background-color: #303030;
   position: sticky;
   top: 0;
+  border-style: none none solid none;
+  border-color: #A5D7E8;
+  z-index: 2;
 }
 
 .header {
@@ -17,8 +24,9 @@ nav {
 .logo {
   margin: 1rem;
   text-decoration: none;
-  background-color: #576CBC;
-  border-radius: 50rem;
+  background-color: #A5D7E8;
+  border-radius: 40%;
+  overflow: hidden;
 }
 
 .logo-img {
@@ -36,7 +44,7 @@ nav ul li {
 nav ul li a {
   display: block;
   text-decoration: none;
-  color: #A5D7E8;
+  color: #cfcfcf;
   padding: 0.5rem;
   margin: 0 0.5rem;
   border-radius: 0.5rem;
@@ -53,7 +61,7 @@ nav ul li a {
 }
 
 .header button:hover {
-  background-color:#19376D;
+  background-color:#525252;
 }
 
 .header button img {
@@ -61,24 +69,33 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color:#19376D;
+  background-color:#525252;
+  transition: all 400ms ease;
 }
 
 @media screen and (max-width: 600px) {
+  html {
+    scroll-padding-top: 15rem;
+  }
+
   nav ul {
     display: none;
   }
+  
   .header button {
     display: block;
   }
+  
   nav {
     align-items: start;
     flex-direction: column;
   }
+  
   .responsive {
     display: block;
     padding: 0;
   }
+
   .responsive li a {
     display: block;
     width: 100vw;

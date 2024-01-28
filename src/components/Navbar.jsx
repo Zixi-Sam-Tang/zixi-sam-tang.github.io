@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../images/pixel-avatar.png";
-import burgerMenu from "../images/burger-icon.png";
+import logo from "../assets/pixel-avatar.png";
+import burgerMenu from "../assets/burger-icon.png";
 
 export function Navbar() {
   var [menu, setMenu] = useState(false);
@@ -16,7 +16,7 @@ export function Navbar() {
     </div>
     <ul className={menu ? "responsive" : ""}>
       <li>
-        <a href="#about" className="">
+        <a href="#about">
           About
         </a>
       </li>
@@ -32,4 +32,4 @@ export function Navbar() {
       </li>
     </ul>
   </nav>;
-}
+};
