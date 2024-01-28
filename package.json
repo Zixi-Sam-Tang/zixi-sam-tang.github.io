@@ -1,9 +1,7 @@
 {
-  "name": "portfolio-2",
+  "name": "zixi-sam-tang.github.io",
   "version": "0.1.0",
   "homepage": "https://zixi-sam-tang.github.io/",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
@@ -20,6 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
