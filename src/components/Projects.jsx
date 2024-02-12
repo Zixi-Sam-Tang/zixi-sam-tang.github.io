@@ -1,24 +1,23 @@
 import React from "react";
 import { Project } from "./Project";
 import "./Projects.css"
-import { getDetails } from "./ProjectDetails";
+import Details from "../assets/Project_Details.json";
 
 export function Projects() {
-  var projCtnt = getDetails();
-
   return <div id="projects">
     <span className="projs-title">Projects</span>
     <div className="proj-grid">
       {
-        projCtnt.map((row, i) =>
+        Details && Details.map(projectDetail =>
           <Project
-            title={projCtnt[i][0]}
-            img={projCtnt[i][1]}
-            description={projCtnt[i][2]}
-            stack={projCtnt[i][3]}
-            github={projCtnt[i][4]}
-            demo={projCtnt[i][5]}
-            hidden={projCtnt[i][6]}/>
+            title={projectDetail.title}
+            img={projectDetail.img}
+            description={projectDetail.description}
+            stack={projectDetail.stack}
+            github={projectDetail.github}
+            demo={projectDetail.demo}
+            hidden={projectDetail.isHidden}
+            key={projectDetail.id}/>
         )
       }
     </div>

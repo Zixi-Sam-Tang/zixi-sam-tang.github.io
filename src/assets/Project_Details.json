@@ -1,0 +1,32 @@
+[
+    {
+        "id" : 1,
+        "title": "Sudoku Solver (Front-End)",
+        "img": "images/default.png",
+        "description" : "Sudoku solver application optimized using bitshifting.",
+        "stack" : "React.js, CSS",
+        "github" : "https://github.com/Zixi-Sam-Tang/SudokuSolver",
+        "demo" : "",
+        "isHidden" : true
+    },
+    {
+        "id" : 2,
+        "title" : "Sudoku Solver (Back-End)",
+        "img" : "images/default.png",
+        "description" : "Sudoku solver application backend.",
+        "stack" : ".Net Core (C#), SQL Server",
+        "github" : "https://github.com/Zixi-Sam-Tang/SudokuSolverBackend",
+        "demo" : "",
+        "isHidden" : true
+    },
+    {
+        "id" : 3,
+        "title" : "Portfolio Website (Old)",
+        "img" : "images/port-old.png",
+        "description" : "Old portfolio website.",
+        "stack" : "HTML, CSS, JavaScript",
+        "github" : "https://github.com/Zixi-Sam-Tang/zixi-sam-tang.github.io-old-",
+        "demo" : "https://zixi-sam-tang.github.io/zixi-sam-tang.github.io-old-/",
+        "isHidden" : false
+    }
+]
