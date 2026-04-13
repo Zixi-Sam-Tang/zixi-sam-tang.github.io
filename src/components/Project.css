@@ -1,70 +1,149 @@
-.hidden {
-  visibility: hidden;
-}
-
-.proj-container {
-  width: 24rem;
-  overflow: hidden;
-  height: 15rem;
+.project-card {
   position: relative;
-  border-radius: 1rem;
-  margin: 0.25rem;
-}
-
-.proj-container:hover .proj-img{
-  transform: scale(1.5);
-}
-
-.proj-container:hover .proj-title{
-  opacity: 0;
-}
-
-.proj-img {
-  width: 100%;
-  opacity: 0.7;
-  transition: all 1s ease-in-out;
-}
-
-.proj-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  font-size: 1.2rem;
-  color: #ffffff;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  transition: all 0.7s ease-out;
-}
-
-.proj-stack {
-  padding-top: 0.5rem;
-}
-
-.proj-description-container {
-  position: absolute;
-  top: 15rem;
-  left: 0;
-  color: #cfcfcf;
-  height: 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  transition: all 0.25s;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(12, 30, 45, 0.92), rgba(8, 18, 29, 0.88));
+  box-shadow: var(--shadow-card);
+  transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(var(--accent-rgb), 0.14), transparent 45%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--accent-rgb), 0.26);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
+}
+
+.project-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.project-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 17, 26, 0) 0%, rgba(7, 17, 26, 0.18) 48%, rgba(7, 17, 26, 0.45) 100%);
+  pointer-events: none;
+}
+
+.project-image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 700ms ease;
 }
 
-.proj-container:hover .proj-description-container {
-  top: 0;
+.project-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.95rem;
+  padding: 1.5rem;
 }
 
-@media screen and (max-width: 600px) {
-  .proj-container {
-    width: 15rem;
-    height: 10rem;
-    margin: 0.5rem;
+.project-title {
+  margin: 0;
+  font-size: 1.32rem;
+  line-height: 1.2;
+}
+
+.project-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.project-stack {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-stack-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--accent-rgb), 0.24);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--accent-rgb), 0.24);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--text);
+  font-weight: 500;
+  transition: transform 250ms ease, border-color 250ms ease, background 250ms ease;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(var(--accent-rgb), 0.38);
+  background: rgba(var(--accent-rgb), 0.16);
+}
+
+.project-link-secondary {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-link-secondary:hover {
+  border-color: rgba(var(--accent-secondary-rgb), 0.34);
+  background: rgba(var(--accent-secondary-rgb), 0.12);
+}
+
+@media screen and (max-width: 640px) {
+  .project-body {
+    padding: 1.25rem;
   }
 }

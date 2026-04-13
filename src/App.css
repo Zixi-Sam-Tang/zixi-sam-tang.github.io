@@ -1,16 +1,126 @@
-body {
-  background-color: #202020;
-  margin: auto;
+.App {
+  text-align: left;
 }
 
-body::-webkit-scrollbar {
-  display: none;
+.app-shell {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(var(--accent-rgb), 0.16), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(var(--accent-secondary-rgb), 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.025), transparent 40%, rgba(255, 255, 255, 0.03));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-glow {
+  position: fixed;
+  width: 28rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  filter: blur(32px);
+  opacity: 0.42;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-glow-one {
+  top: -8rem;
+  right: -5rem;
+  background: rgba(var(--accent-rgb), 0.22);
+}
+
+.page-glow-two {
+  bottom: 6rem;
+  left: -10rem;
+  background: rgba(var(--accent-secondary-rgb), 0.18);
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.app-main > section {
+  animation: fade-up 700ms ease both;
+}
+
+.app-main > section:nth-of-type(2) {
+  animation-delay: 120ms;
 }
 
 .highlight {
-  color: #03f8fc;
+  color: var(--accent);
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--accent-rgb), 0.24);
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .heading-2 {
-  font-size: 1.5rem;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .app-main {
+    width: calc(100% - 1.25rem);
+    padding: 1.5rem 0 3rem;
+    gap: 2.5rem;
+  }
+
+  .page-glow {
+    width: 18rem;
+  }
 }
