@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4a169f59.css",
-    "main.js": "/static/js/main.4200402f.js",
+    "main.js": "/static/js/main.db4cfe66.js",
     "static/js/787.5e9d6c33.chunk.js": "/static/js/787.5e9d6c33.chunk.js",
     "static/media/pfp.png": "/static/media/pfp.699243be8624cf2ef5f8.png",
-    "static/media/Zixi-Sam-Tang.pdf": "/static/media/Zixi-Sam-Tang.e2884210b66ae6abb65b.pdf",
+    "static/media/Zixi-Sam-Tang.pdf": "/static/media/Zixi-Sam-Tang.6a6bd1c69bc8b02c6454.pdf",
     "index.html": "/index.html",
     "main.4a169f59.css.map": "/static/css/main.4a169f59.css.map",
-    "main.4200402f.js.map": "/static/js/main.4200402f.js.map",
+    "main.db4cfe66.js.map": "/static/js/main.db4cfe66.js.map",
     "787.5e9d6c33.chunk.js.map": "/static/js/787.5e9d6c33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4a169f59.css",
-    "static/js/main.4200402f.js"
+    "static/js/main.db4cfe66.js"
   ]
 }
